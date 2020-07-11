@@ -1,0 +1,145 @@
+<!-- ------------------------------------------------->
+<!-- Author: {Sayantan Biswas}
+ Maintainer: {Sayantan Biswas}
+ Email: {sayantanbiswas1002@gmail.com} -->
+<!-- ------------------------------------------------->
+
+
+{% extends 'base.html' %}
+{% block title %}
+    Add Event
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block page_body %}
+    <section class="mbr-section form1" id="form1-w" data-rv-view="27" style="background-color: rgb(192, 163, 117); height: 10vh ; width: 90vw; padding-left: 10%; margin-top: -120px;"></section>
+        
+        <div class="mbr-section mbr-section__container mbr-section__container--middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">ADD EVENT</h3>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-section mbr-section-nopadding" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
+                        <form action="{{ url_for('addevent')}}" method="post">
+                            
+                            <div class="row row-sm-offset">
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="form1-w-email">Date<span class="form-asterisk">*</span></label>
+                                        <input type="date"  class="form-control" name="date" placeholder="Date" required="required" data-form-field="date" id="date">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="form1-w-name">Start Time<span class="form-asterisk">*</span></label>
+                                        <input type="time" class="form-control"  name="start" placeholder="Start Time" required="required" data-form-field="start" id="start">
+                                    </div>
+                                </div>
+    
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="form1-w-name">End Time<span class="form-asterisk">*</span></label>
+                                        <input type="time" class="form-control"  name="end" placeholder="End Time" required="required" data-form-field="end" id="end">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <!-- <label class="form-control-label" for="form1-w-name">Summary</label> -->
+                                <input type="text" class="form-control"  class="form-control" name="summary" placeholder="Summary" data-form-field="Summary" id="summary">
+                            </div>
+    
+                            <div class="row row-sm-offset">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">1st Email<span class="form-asterisk">*</span></label> -->
+                                        <input type="email"  class="form-control" name="invite1" id="invite1" placeholder="1st invitee" required="required" data-form-field="invite1"">
+                                    </div>
+                                </div>
+    
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">2nd Email</label> -->
+                                        <input type="email"  class="form-control" name="invite2" id="invite2" placeholder="2nd invitee" data-form-field="invite2">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row row-sm-offset">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">3rd Email</label> -->
+                                        <input type="email"  class="form-control" name="invite3" id="invite3" placeholder="3rd invitee" data-form-field="invite3">
+                                    </div>
+                                </div>
+    
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">4th Email</label> -->
+                                        <input type="email" class="form-control"  name="invite4" id="invite4" placeholder="4th invitee" data-form-field="invite4">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row row-sm-offset">
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">5th Email</label> -->
+                                        <input type="email" class="form-control"  name="invite5" id="invite5" placeholder="5th invitee" data-form-field="invite5">
+                                    </div>
+                                </div>
+    
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">6th Email</label> -->
+                                        <input type="email"  class="form-control" name="invite6" id="invite6" placeholder="6th invitee" data-form-field="invite6">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row row-sm-offset">
+                                <!-- <div class="col-xs-12 col-md-6"> -->
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">Description</label> -->
+                                        <input type="text" class="form-control"  name="description" id="description" placeholder="Description of event" data-form-field="description">
+                                    </div>
+                                <!-- </div> -->
+
+                                <!-- <div class="col-xs-12 col-md-6"> -->
+                                    <div class="form-group">
+                                        <!-- <label class="form-control-label" for="form1-w-name">Location</label> -->
+                                        <input type="location"  class="form-control" name="location" id="location" placeholder="Location of event" data-form-field="location">
+                                    </div> 
+                                <!-- </div>    -->
+                            </div>                
+    
+                            <div>
+                                <button type="submit" class="btn btn-black">
+                                    <span class="mbri-calendar mbr-iconfont mbr-iconfont-btn"></span>
+                                    ADD EVENT
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-control-label">
+                                    <p style="padding-top: 10px;">Status: {{ result_text }}</p>
+                                </label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,128 @@
+<!-- ------------------------------------------------->
+<!-- Author: {Sayantan Biswas}
+ Maintainer: {Sayantan Biswas}
+ Email: {sayantanbiswas1002@gmail.com} -->
+<!-- ------------------------------------------------->
+
+
+{% extends 'base.html' %}
+{% block title %}
+    Error
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block page_body %}
+
+    <section class="mbr-section article" id="msg-box8-z" data-rv-view="46" style="background-color: rgb(184, 49, 47); padding-top: 40px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-xs-center">
+                    <h3 class="mbr-section-title display-2">ERROR</h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="engine"></section>
+
+    <section class="mbr-section mbr-section__container article" id="header3-10" data-rv-view="49" style="background-color: rgb(226, 80, 65); padding-top: 40px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="mbr-section-title display-2">
+                        <span style="font-weight: normal;">
+                            <p>{{ message }}</p>
+                        </span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mbr-section mbr-section__container article" id="header3-1b" data-rv-view="51" style="background-color: rgb(239, 239, 239); padding-top: 20px; padding-bottom: 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="mbr-section-title display-2">Cause of the error may be any of the following :</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mbr-cards mbr-section mbr-section-nopadding" id="features6-y" data-rv-view="53" style="background-color: rgb(239, 239, 239);">
+        <div class="mbr-cards-row row">
+            <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 0px; padding-bottom: 40px;">
+                <div class="container">
+                    <div class="card cart-block">
+                        <div class="card-img">
+                            <span class="mbri-database mbr-iconfont mbr-iconfont-features3" style="font-size: 110px;"></span>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">No Response from Server</h4>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 0px; padding-bottom: 40px;">
+                <div class="container">
+                    <div class="card cart-block">
+                        <div class="card-img">
+                            <span class="mbri-letter mbr-iconfont mbr-iconfont-features3" style="font-size: 130px;"></span>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">Invalid Email address</h4>                                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 0px; padding-bottom: 40px;">
+                <div class="container">
+                    <div class="card cart-block">
+                        <div class="card-img">
+                            <span class="mbri-clock mbr-iconfont mbr-iconfont-features3"></span>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">Server Timeout</h4>                                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 0px; padding-bottom: 40px;">
+                <div class="container">
+                    <div class="card cart-block">
+                        <div class="card-img">
+                            <span class="mbri-globe-2 mbr-iconfont mbr-iconfont-features3"></span>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">Not connected to Internet</h4>                                                                        
+                        </div>
+                    </div>
+                </div>
+            </div>                        
+        </div>
+    </section>
+
+    <section class="mbr-section mbr-section__container" id="buttons1-11" data-rv-view="56" style="background-color: rgb(184, 49, 47); padding-top: 40px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-xs-center">
+                        <a class="btn btn-black" href="{{url_for('home')}}">
+                            <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                            HOME
+                        </a>     
+                        <a class="btn btn-warning-outline btn-warning" href="{{url_for('addevent')}}">
+                            <span class="mbri-refresh mbr-iconfont mbr-iconfont-btn"></span>
+                            TRY AGAIN&nbsp;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

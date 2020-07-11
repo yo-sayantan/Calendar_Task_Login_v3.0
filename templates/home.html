@@ -1,0 +1,123 @@
+<!-- ------------------------------------------------->
+<!-- Author: {Sayantan Biswas}
+ Maintainer: {Sayantan Biswas}
+ Email: {sayantanbiswas1002@gmail.com} -->
+<!-- ------------------------------------------------->
+
+
+{% extends 'base.html' %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block page_body %}
+    <section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-parallax-background" id="header1-m" data-rv-view="6" style="background-image: url('/static/images/organizing-projects.png')">
+        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
+        <div class="mbr-table-cell">
+
+            <div class="container">
+                <div class="row">
+                    <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
+
+                        <h1 class="mbr-section-title display-1">Task Organiser</h1>
+                        <p class="mbr-section-lead lead"><br><br>
+                            <span style="font-style: normal;">Organise meetings<br>Send Invites<br>Mark in Google Calendar</span><br>
+                            <span style="font-style: normal;"><br></span>
+                        </p>
+                        <div class="mbr-section-btn">
+                            {% if is_logged_in() %}
+
+                                <a href="{{url_for('simplelogin.logout')}}">
+                                    <button class="btn btn-lg btn-primary" type="submit">
+                                        <span class="mbri-lock mbr-iconfont mbr-iconfont-btn"></span>
+                                        LOGOUT
+                                    </button>
+                                </a>
+
+                            {% else %}
+
+                                <a href="{{url_for('simplelogin.login')}}">
+                                    <button class="btn btn-lg btn-primary" type="submit">
+                                        <span class="mbri-lock mbr-iconfont mbr-iconfont-btn"></span>
+                                        LOGIN
+                                    </button>
+                                </a>
+
+                            {% endif %}
+                            
+                            <a class="btn btn-lg btn-black" href="{{ url_for('.home', _anchor='contactform') }}">
+                                <span class="mbri-paper-plane mbr-iconfont mbr-iconfont-btn" style="font-size: 24px;"></span>
+                                CONTACT US
+                            </a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mbr-arrow mbr-arrow-floating" aria-hidden="true">
+            <a href="{{ url_for('.home', _anchor='contactform') }}">
+                <i class="mbr-arrow-icon"></i>
+            </a>
+        </div>
+
+    </section>
+    
+    <section class="mbr-section form1" id="contactform" data-rv-view="9" style="background-color: rgb(239, 239, 239); padding-top: 40px; padding-bottom: 40px;">
+        <div class="mbr-section mbr-section__container mbr-section__container--middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">CONTACT FORM</h3>
+                        <p class="mbr-section-subtitle">For any query or doubt, please fill the form below.&nbsp;<br>We will contact you via mail or phone within 24 hours. Thank You.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-section mbr-section-nopadding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
+                        <div data-form-alert="true">
+                            <div hidden="" data-form-alert-success="true" class="alert alert-form alert-success text-xs-center" style="background-color: rgb(46, 46, 46); color:rgb(255, 255, 255)">Your Query received. We will contact you soon..!!</div>
+                        </div>
+
+                        <form action="/comment" method="post" data-form-title="CONTACT FORM">
+                            <input type="hidden" value="oPrn4pYZkcevPOkwMaBO5nC521BBZoE1wDDbhX3RyeOfuceK40Q0HjScSNLcN55h8oUYI82eg7BCmDYBZpfl4y7c/Ks66IgDkL8fo9R+0isWTNg3o6c2zYDJqxaWV+rr" data-form-email="true">
+                            <div class="row row-sm-offset">
+
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="form1-r-name">Name<span class="form-asterisk">*</span></label>
+                                        <input type="text" class="form-control" name="name" required="" data-form-field="Name" id="form1-r-name">
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="form1-r-email">Email<span class="form-asterisk">*</span></label>
+                                        <input type="email" class="form-control" name="email" required="" data-form-field="Email" id="form1-r-email">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-control-label" for="form1-r-message">Message</label>
+                                <textarea class="form-control" name="message" rows="7" data-form-field="Message" id="form1-r-message"></textarea>
+                            </div>
+
+                            <div><button type="submit" class="btn btn-black"><span class="mbri-paper-plane mbr-iconfont mbr-iconfont-btn" style="font-size: 24px;"></span>CONTACT US</button></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+        <input name="animation" type="hidden">
+    </section>
+{% endblock %}

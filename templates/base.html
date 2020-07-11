@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.12.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo-black-245x128.png') }}" type="image/x-icon">
+    <meta name="description" content="">
+
+
+    <title>
+        {% block title %} Task Organizer {% endblock %}
+    </title>
+
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&subset=latin">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/tether.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style_dropdown.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style_theme.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style_facebook.css') }}">
+        <link rel="preload" as="style" href="{{ url_for('static', filename='css/mbr-additional.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mbr-additional.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='icons/mobirise-icons.css') }}">
+    
+
+</head>
+
+<body>
+    <section id="menu-0" data-rv-view="130">
+        <nav class="navbar navbar-dropdown navbar-fixed-top">
+            {% block nav %}
+            <div class="container">
+
+                <div class="mbr-table">
+                    <div class="mbr-table-cell">
+
+                        <div class="navbar-brand">
+                            <a href="{{url_for('home')}}" class="navbar-logo">
+                                <img src="{{ url_for('static', filename='images/logo-black-128x67.png') }}" alt="TASKOrganizer">
+                                <span class="navbar-caption" style="padding-left: 0px; font-size: 26px; color: #7aa547">Organizer</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="mbr-table-cell">
+
+                        <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="hamburger-icon"></div>
+                        </button>
+
+                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                            <li class="nav-item"><a class="nav-link link" href="{{url_for('home')}}">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="{{url_for('addevent')}}">SEND INVITES</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="{{url_for('history')}}">HISTORY</a></li>
+                            
+							<li class="nav-item nav-btn">
+                                {% if is_logged_in() %}
+                                    <a class="nav-link btn btn-white btn-white-outline" href="{{url_for('simplelogin.logout')}}">Logout</a>
+                                {% else %}
+                                    <a class="nav-link btn btn-white btn-white-outline" href="{{url_for('simplelogin.login')}}">Login</a>
+                                {% endif %}
+                            </li>
+                            <li class="nav-item nav-btn">
+                                <li class="nav-item ">
+                                {% if is_logged_in() %}
+                                    <span class="nav-link" style="color: white;">{{ get_username() }}</span>
+                                {% else %}
+                                    <span class="nav-link" style="color: white;">Guest</span>
+                                {% endif %}
+                            </li>
+                        </ul>
+                        <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="close-icon"></div>
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+            {% endblock %}
+        </nav>
+    </section>
+
+    <div style="background-color: rgb(192, 163, 117); overflow: auto;">
+        {% block page_body %}
+        {% endblock %}
+    </div>
+
+    <section class="mbr-section mbr-section-md-padding mbr-footer footer1 mbr-after-navbar" id="contacts1-2" data-rv-view="132" style="background-color: rgb(46, 46, 46); padding-top: 30px; padding-bottom: 30px; left: 0; bottom: 20px; width: 100%;">
+        
+        {% block endnav %}
+            <div class="container" style="height: 13vh;">
+                <div class="row">
+                    <div class="mbr-footer-content col-xs-12 col-md-3">
+                        <div><img src="{{ url_for('static', filename='images/logo-black-128x67.png') }}"></div>
+                    </div>
+                    <div class="mbr-footer-content col-xs-12 col-md-3">
+                        <p><strong>Address</strong><br>
+                            <strong><a href="https://g.page/kiituni?share" target="_blank">KIIT University</a><br><a href="https://g.page/kiituni?share" target="_blank">Bhubaneshwar, Odisha, 751024</a></strong></p>
+                    </div>
+                    <div class="mbr-footer-content col-xs-12 col-md-3">
+                        <p><strong>Contacts</strong><br> Email: <a href="mailto:mypages.sb@gmail.com">mypages.sb@gmail.com</a><br> Phone: <a href="tel:+917381183721">+91 7381183721</a><br></p>
+                    </div>
+                    <div class="mbr-footer-content col-xs-12 col-md-3">
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+            <input name="animation" type="hidden">
+        {% endblock %}
+
+        <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-1c" data-rv-view="313" style="background-color: rgb(0, 0, 0); padding-top: 0.875rem; padding-bottom: 0.875rem; position: fixed; left: 0; bottom: 0; width: 100%;">
+            {% block footer %}
+                <div class="container text-xs-center">
+                    <p>Copyright (C) 2020 Task Organizer</p>
+                </div>
+            {% endblock %}
+        </footer>
+
+    </section>
+
+
+    {% block tail%}
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tether.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.viewportchecker.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/smooth-scroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.touch-swipe.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/facebook-script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jarallax.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/formoid.min.js') }}"></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
+    <script src="https://apis.google.com/js/plusone.js"></script>
+    {% endblock %}
+
+    
+</body>
+
+</html>

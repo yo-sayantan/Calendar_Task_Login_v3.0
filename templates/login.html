@@ -1,0 +1,102 @@
+<!-- ------------------------------------------------->
+<!-- Author: {Sayantan Biswas}
+ Maintainer: {Sayantan Biswas}
+ Email: {sayantanbiswas1002@gmail.com} -->
+<!-- ------------------------------------------------->
+
+
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block page_body %}
+    <section class="mbr-section form1" id="form1-v" data-rv-view="18" style="background-color: rgb(192, 163, 117); height: 80vh; width: 90vw; padding-left: 10%; padding-top: 180px">
+        <!-- padding: 10% 20% 20% 20% -->
+        <div class="mbr-section mbr-section__container mbr-section__container--middle">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">LOGIN</h3>
+                        <p class="mbr-section-subtitle">Please login to enjoy all its features at full potential !!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mbr-section mbr-section-nopadding" style="width: 100%;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
+                        <!-- <form method="post" action=""> -->
+                        <form action="" method="post">
+                            <div class="row row-sm-offset">
+                                {{ form.csrf_token }}
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="form1-v-name">Username<span class="form-asterisk">*</span></label>
+                                        <input type="text" class="form-control" name="username" placeholder="Enter Username" required="required" value="{{ form.username.value }}"/>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="form1-v-password">Password<span class="form-asterisk">*</span></label>
+                                        <input type="password" class="form-control" name="password" placeholder="Enter Password" required="required" value="{{ form.password.value }}"/>
+                                    </div>
+                                </div>
+                                <!-- <input type="text" name="username" placeholder="User Name" required="required" value="{{ form.username.value }}"/>
+                                <input type="password" name="password" placeholder="Password" required="required" value="{{ form.password.value }}"/> -->
+                                {% if next %}
+                                    <input type="hidden" name="next" value="{{next}}">
+                                {% endif %}
+                            </div>
+                        <!-- </form> -->
+                            <div>
+                                <button type="submit" class="btn btn-black btn-large">
+                                    <span class="mbri-lock mbr-iconfont mbr-iconfont-btn"></span>
+                                    LOGIN
+                                </button>
+                                <!-- <input type="submit" class="btn btn-black btn-large" value="LOGIN"> -->
+                            </div>
+
+                        </form>
+                        {% if error %}
+                            <span style="color: red;">
+                                <p style="font-size: 20px ; padding-top: 20px"><b>{{ message }}ERROR</b></p>
+                            </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </section>
+{% endblock %}
+
+{% block messages %}
+    {{super()}}Hello
+    {%if form.errors %}
+        <ul class="alert alert-danger">
+        {% for field, errors in form.errors.items() %}
+            <li>{{field}} {% for error in errors %}{{ error }}{% endfor %}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class="flashes alert">
+        {% for category, message in messages %}
+        <li class="flashes alert alert-{{category}}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        {% if request.path == url_for('simplelogin.login') %}
+        <ul class="flashes alert alert-primary">
+        <li>Please provide username and password to login</li>
+        </ul>
+        {% endif %}
+    {% endif %}
+{% endwith %}

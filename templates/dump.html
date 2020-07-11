@@ -1,0 +1,30 @@
+<a class="btn btn-lg btn-black" href="{{url_for('', _anchor='form1-r')}}"></a>
+
+<div class="form-group">
+    {% block messages %}
+        {{super()}}
+        {%if form.errors %}
+            <ul class="alert alert-danger">
+            {% for field, errors in form.errors.items() %}
+                <li>{{field}} {% for error in errors %}{{ error }}{% endfor %}</li>
+                
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endblock %}
+    <label class="form-control-label" for="form1-v-message">Message</label>
+    <textarea class="form-control" name="message" rows="1" data-form-field="Message" id="form1-v-message"></textarea>
+</div>
+
+{% block head %}
+{% endblock %}
+
+<section id="menu-0" data-rv-view="130">
+    <nav class="navbar navbar-dropdown navbar-fixed-top">
+        <div class="container">
+            <br><br><br><br><br>
+        </div>
+    </nav>
+</section>
+
+<a href="home.html#form1-r"></a>

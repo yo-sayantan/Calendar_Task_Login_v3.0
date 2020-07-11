@@ -1,0 +1,53 @@
+<!-- ------------------------------------------------->
+<!-- Author: {Sayantan Biswas}
+ Maintainer: {Sayantan Biswas}
+ Email: {sayantanbiswas1002@gmail.com} -->
+<!-- ------------------------------------------------->
+
+
+{% extends 'base.html' %}
+{% block title %}
+    Admin Error
+{% endblock %}
+
+{% block page_body %}
+  <section class="mbr-section" id="msg-box6-17" data-rv-view="66" style="background-color: rgb(184, 49, 47); padding-top: 20vh; padding-bottom: 80px; height: 60vh">
+  
+    <div class="container">
+        <div class="row">
+            <div class="mbr-table-md-up">
+              
+              <div class="mbr-table-cell col-md-5 text-xs-center text-md-right content-size">
+                <h3 class="mbr-section-title display-2">ADMIN ONLY ACCESS</h3>
+                <div class="lead">
+                  <p>You are not an admin.<br>Please login as admin to access this page.</p>
+                </div>
+              </div>
+              
+              <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 38%;">
+                  <div class="mbr-figure"><span class="mbri-add-submenu mbr-iconfont mbr-iconfont-msg-box5" style="font-size: 335px;"></span></div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+  </section>
+
+  <section class="mbr-section mbr-section__container" id="buttons1-1a" data-rv-view="69" style="background-color: rgb(239, 239, 239); padding-top: 7vh; height: 20vh">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-xs-center">
+                  <a class="btn btn-black-outline btn-black" href="{{url_for('home')}}">
+                    <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                    HOME
+                  </a></div>
+            </div>
+        </div>
+    </div>
+
+  </section>
+
+{% endblock %}
